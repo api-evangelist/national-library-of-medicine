@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: NCBI E-utilities API — History
+  description: 'NCBI E-utilities API — History. 1 operations. Lead operation: Post UIDs to the Entrez History server. Self-contained
+    Naftiko capability covering one National Library Of Medicine business surface.'
+  tags:
+  - National Library Of Medicine
+  - History
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    NATIONAL_LIBRARY_OF_MEDICINE_API_KEY: NATIONAL_LIBRARY_OF_MEDICINE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: national-library-of-medicine-history
+    baseUri: https://eutils.ncbi.nlm.nih.gov/entrez/eutils
+    description: NCBI E-utilities API — History business capability. Self-contained, no shared references.
+    resources:
+    - name: epost.fcgi
+      path: /epost.fcgi
+      operations:
+      - name: epost
+        method: POST
+        description: Post UIDs to the Entrez History server
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: db
+          in: query
+          type: string
+          required: true
+        - name: id
+          in: query
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: national-library-of-medicine-history-rest
+    port: 8080
+    description: REST adapter for NCBI E-utilities API — History. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/epost-fcgi
+      name: epost-fcgi
+      description: REST surface for epost.fcgi.
+      operations:
+      - method: POST
+        name: epost
+        description: Post UIDs to the Entrez History server
+        call: national-library-of-medicine-history.epost
+        with:
+          db: rest.db
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: national-library-of-medicine-history-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for NCBI E-utilities API — History. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: post-uids-entrez-history-server
+      description: Post UIDs to the Entrez History server
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: national-library-of-medicine-history.epost
+      with:
+        db: tools.db
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
