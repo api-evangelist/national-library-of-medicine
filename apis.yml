@@ -5,7 +5,7 @@ description: >-
   library. It collects, organizes, and provides access to medical literature and information to support research and
   decision-making in healthcare, including PubMed and ClinicalTrials.gov.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/national-library-of-medicine/refs/heads/main/apis.yml
 created: '2024-12-03'
 modified: '2026-05-19'
