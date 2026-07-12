@@ -40,6 +40,8 @@ apis:
       PubMed, PMC, Gene, Nuccore, and Protein through a suite of server-side programs for search, link, and retrieval
       operations.
 common:
+  - type: DomainSecurity
+    url: security/national-library-of-medicine-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/NIH-NLM
   - type: LinkedIn
