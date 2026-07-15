@@ -40,6 +40,8 @@ apis:
       PubMed, PMC, Gene, Nuccore, and Protein through a suite of server-side programs for search, link, and retrieval
       operations.
 common:
+  - type: AgenticAccess
+    url: agentic-access/national-library-of-medicine-agentic-access.yml
   - type: DomainSecurity
     url: security/national-library-of-medicine-domain-security.yml
   - type: GitHubOrganization
