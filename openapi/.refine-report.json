@@ -1,0 +1,20 @@
+{
+  "provider": "national-library-of-medicine",
+  "sources": [
+    "national-library-of-medicine-discovery-api-openapi.yml",
+    "national-library-of-medicine-history-api-openapi.yml",
+    "national-library-of-medicine-retrieve-api-openapi.yml",
+    "national-library-of-medicine-search-api-openapi.yml"
+  ],
+  "outputs": [
+    "national-library-of-medicine-discovery-api-openapi.yml",
+    "national-library-of-medicine-history-api-openapi.yml",
+    "national-library-of-medicine-retrieve-api-openapi.yml",
+    "national-library-of-medicine-search-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
