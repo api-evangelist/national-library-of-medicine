@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NCBI E-utilities Discovery History API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "History",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Post UIDs to the Entrez History server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/epost.fcgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Uploads a list of UIDs and returns a WebEnv and query_key for downstream calls."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NCBI E-utilities Discovery Retrieve API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Retrieve",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Fetch full records by UID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of UIDs or a WebEnv/query_key reference."
+              },
+              {
+                "name": "rettype",
+                "value": "",
+                "type": "query",
+                "description": "Retrieval type (e.g. abstract, fasta, gb, medline)."
+              },
+              {
+                "name": "retmode",
+                "value": "",
+                "type": "query",
+                "description": "Retrieval mode (e.g. xml, text, json, asn.1)."
+              },
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns formatted data records for a list of UIDs."
+        },
+        {
+          "info": {
+            "name": "Retrieve document summaries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Set to '2.0' for the newer DocSum schema."
+              },
+              {
+                "name": "retmode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns document summaries for a list of input UIDs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

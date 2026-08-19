@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NCBI E-utilities Discovery Search API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search a database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query",
+                "description": "Database to search (e.g. pubmed, pmc, gene, protein, nuccore)."
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "query",
+                "description": "Entrez text query, URL-encoded."
+              },
+              {
+                "name": "usehistory",
+                "value": "",
+                "type": "query",
+                "description": "Set to 'y' to post UIDs to the History server."
+              },
+              {
+                "name": "retmax",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of UIDs to return (default 20, max 10000)."
+              },
+              {
+                "name": "retstart",
+                "value": "",
+                "type": "query",
+                "description": "Sequential index of the first UID to return (zero-based)."
+              },
+              {
+                "name": "retmode",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              },
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "NCBI API key for higher rate limits."
+              }
+            ]
+          },
+          "docs": "Returns a list of UIDs matching a text query, optionally posting the results to the Entrez History server for downstream operations."
+        },
+        {
+          "info": {
+            "name": "Global cross-database query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/egquery.fcgi",
+            "params": [
+              {
+                "name": "term",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the number of records in every Entrez database matching a single text query."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

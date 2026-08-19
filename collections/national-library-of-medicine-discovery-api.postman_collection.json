@@ -1,0 +1,387 @@
+{
+  "item": [
+    {
+      "id": "7c4dc0e8-8fd1-4ba5-9575-7a19af2203d5",
+      "name": "Discovery",
+      "description": {
+        "content": "Discover database metadata, related records, and citations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0483880a-6a4e-4365-a8d7-90fb409cdab8",
+          "name": "Database statistics and field metadata",
+          "request": {
+            "name": "Database statistics and field metadata",
+            "description": {
+              "content": "Returns the list of all valid Entrez databases or, when 'db' is supplied, statistics and indexing fields for that database.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "einfo.fcgi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "db",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "retmode",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48cc63a5-4bdf-4b93-ac31-048db1cf9a31",
+              "name": "Database information.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "einfo.fcgi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "db",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "retmode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b277a0f-fb6a-408d-999e-eb89a91800a9",
+          "name": "Find related records across Entrez databases",
+          "request": {
+            "name": "Find related records across Entrez databases",
+            "description": {
+              "content": "Returns UIDs in a destination database linked to UIDs in a source database, including computed neighbors and external LinkOut links.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "elink.fcgi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dbfrom",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "db",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "linkname",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cmd",
+                  "value": "<string>",
+                  "description": "Command mode (neighbor, neighbor_history, llinks, prlinks, etc.)."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e81238ec-574f-4f58-8910-0f8e700e5981",
+              "name": "Linked UIDs and metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "elink.fcgi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dbfrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "db",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkname",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cmd",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d1e7bb1-e627-4c5a-829e-69cbf280ff1a",
+          "name": "Spelling suggestions for a query term",
+          "request": {
+            "name": "Spelling suggestions for a query term",
+            "description": {
+              "content": "Returns NCBI-suggested corrections for a misspelled query term.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "espell.fcgi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "db",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "term",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "abb79490-5f60-4141-859d-204c790f6ed1",
+              "name": "Suggested replacement terms.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "espell.fcgi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "db",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "term",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0206a23d-3120-4a5d-b7a9-4e20961026c6",
+          "name": "Match citations to PubMed UIDs",
+          "request": {
+            "name": "Match citations to PubMed UIDs",
+            "description": {
+              "content": "Resolves bibliographic citation strings to PubMed UIDs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ecitmatch.cgi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "db",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "rettype",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bdata",
+                  "value": "<string>",
+                  "description": "(Required) Pipe-delimited citation strings."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4acc2c28-46fd-4895-b900-ba675b1f5696",
+              "name": "Matched PMIDs.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ecitmatch.cgi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "db",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rettype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bdata",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e130a353-3bae-49c1-be3d-2030d95e38a1",
+    "name": "NCBI E-utilities Discovery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Entrez Programming Utilities (E-utilities) are a public API to the NCBI Entrez system, providing access to all Entrez databases including PubMed, PMC, Gene, Nuccore, and Protein. The E-utilities are a suite of nine server-side programs that accept a fixed URL syntax for search, link, and retrieval operations. Maintained by the National Center for Biotechnology Information (NCBI), part of the U.S. National Library of Medicine.\n\nContact Support:\n Name: NCBI Information Engineering Branch\n Email: eutilities@ncbi.nlm.nih.gov",
+      "type": "text/plain"
+    }
+  }
+}

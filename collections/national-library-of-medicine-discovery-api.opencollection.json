@@ -1,0 +1,132 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NCBI E-utilities Discovery API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Database statistics and field metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "retmode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the list of all valid Entrez databases or, when 'db' is supplied, statistics and indexing fields for that database."
+        },
+        {
+          "info": {
+            "name": "Find related records across Entrez databases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi",
+            "params": [
+              {
+                "name": "dbfrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkname",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cmd",
+                "value": "",
+                "type": "query",
+                "description": "Command mode (neighbor, neighbor_history, llinks, prlinks, etc.)."
+              }
+            ]
+          },
+          "docs": "Returns UIDs in a destination database linked to UIDs in a source database, including computed neighbors and external LinkOut links."
+        },
+        {
+          "info": {
+            "name": "Spelling suggestions for a query term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/espell.fcgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "term",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns NCBI-suggested corrections for a misspelled query term."
+        },
+        {
+          "info": {
+            "name": "Match citations to PubMed UIDs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/ecitmatch.cgi",
+            "params": [
+              {
+                "name": "db",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rettype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bdata",
+                "value": "",
+                "type": "query",
+                "description": "Pipe-delimited citation strings."
+              }
+            ]
+          },
+          "docs": "Resolves bibliographic citation strings to PubMed UIDs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

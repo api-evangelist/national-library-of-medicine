@@ -1,0 +1,240 @@
+{
+  "item": [
+    {
+      "id": "aa47f2f2-aa0a-4fea-aba8-ae7b67d697b1",
+      "name": "Retrieve",
+      "description": {
+        "content": "Retrieve full or summary records from Entrez databases.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ed1fb53a-67b8-4792-886e-f591d21213bc",
+          "name": "Fetch full records by UID",
+          "request": {
+            "name": "Fetch full records by UID",
+            "description": {
+              "content": "Returns formatted data records for a list of UIDs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "efetch.fcgi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "db",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) Comma-separated list of UIDs or a WebEnv/query_key reference."
+                },
+                {
+                  "disabled": false,
+                  "key": "rettype",
+                  "value": "<string>",
+                  "description": "Retrieval type (e.g. abstract, fasta, gb, medline)."
+                },
+                {
+                  "disabled": false,
+                  "key": "retmode",
+                  "value": "<string>",
+                  "description": "Retrieval mode (e.g. xml, text, json, asn.1)."
+                },
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d0e4bad4-69e3-4694-b44f-6ec74cc95de0",
+              "name": "Records returned in the requested rettype/retmode.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "efetch.fcgi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "db",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rettype",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "retmode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "877c4e7f-3319-4098-bddc-c184d0be2ea1",
+          "name": "Retrieve document summaries",
+          "request": {
+            "name": "Retrieve document summaries",
+            "description": {
+              "content": "Returns document summaries for a list of input UIDs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "esummary.fcgi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "db",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "Set to '2.0' for the newer DocSum schema."
+                },
+                {
+                  "disabled": false,
+                  "key": "retmode",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07dad75a-43b3-4ab8-93f0-16600fdbd875",
+              "name": "Document summaries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "esummary.fcgi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "db",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "retmode",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7a6ed882-5217-49fc-b525-397a0bb145ec",
+    "name": "NCBI E-utilities Discovery Retrieve API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Entrez Programming Utilities (E-utilities) are a public API to the NCBI Entrez system, providing access to all Entrez databases including PubMed, PMC, Gene, Nuccore, and Protein. The E-utilities are a suite of nine server-side programs that accept a fixed URL syntax for search, link, and retrieval operations. Maintained by the National Center for Biotechnology Information (NCBI), part of the U.S. National Library of Medicine.\n\nContact Support:\n Name: NCBI Information Engineering Branch\n Email: eutilities@ncbi.nlm.nih.gov",
+      "type": "text/plain"
+    }
+  }
+}
