@@ -23,6 +23,11 @@ created: '2024-12-03'
 modified: '2026-05-19'
 specificationVersion: '0.23'
 tags:
+  - Federal-Government
+  - Health
+  - Library
+  - Medicine
+tags_raw:
   - Federal Government
   - Health
   - Library
@@ -65,7 +70,8 @@ apis:
   description: Retrieve full or summary records from Entrez databases.
   humanURL: https://www.ncbi.nlm.nih.gov/home/develop/api
   baseURL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils
-  tags:
+  tags: []
+  tags_raw:
   - Retrieve
   properties:
   - type: OpenAPI
