@@ -5,6 +5,17 @@ description: >-
   library. It collects, organizes, and provides access to medical literature and information to support research and
   decision-making in healthcare, including PubMed and ClinicalTrials.gov.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
