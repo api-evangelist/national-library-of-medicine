@@ -1,10 +1,7 @@
 {
   "provider": "national-library-of-medicine",
   "sources": [
-    "national-library-of-medicine-discovery-api-openapi.yml",
-    "national-library-of-medicine-history-api-openapi.yml",
-    "national-library-of-medicine-retrieve-api-openapi.yml",
-    "national-library-of-medicine-search-api-openapi.yml"
+    "_original/national-library-of-medicine-openapi.yml"
   ],
   "outputs": [
     "national-library-of-medicine-discovery-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "national-library-of-medicine-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "national-library-of-medicine-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "national-library-of-medicine-history-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "national-library-of-medicine-retrieve-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "national-library-of-medicine-search-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
