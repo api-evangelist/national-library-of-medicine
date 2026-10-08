@@ -111,6 +111,12 @@ apis:
   - type: Reference
     url: https://www.ncbi.nlm.nih.gov/books/NBK25497/
 common:
+  - type: Plans
+    url: plans/national-library-of-medicine-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/national-library-of-medicine-rate-limits.yml
+  - type: FinOps
+    url: finops/national-library-of-medicine-finops.yml
   - type: AgenticAccess
     url: agentic-access/national-library-of-medicine-agentic-access.yml
   - type: DomainSecurity
