@@ -7,14 +7,18 @@ front_door_ai:
   probed_at: '2026-09-17'
   host: www.nlm.nih.gov
   final_host: www.nlm.nih.gov
-  ownership: own
-  owner: national-library-of-medicine
-  shares_host_with: null
+  ownership: unresolved
+  owner: null
+  shares_host_with:
+  - united-states-national-library-of-medicine
   inherited_from: null
+  alias_of: null
   verdict: scored
-  score: 4
+  score: null
+  band: null
+  band_label: null
   host_score: 4
-  density: 6.36
+  density: null
   words: 629
   tiers:
     agentic: 0
